@@ -1,0 +1,182 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[10pt, a4paper]{article}
+\usepackage{fontspec} 
+
+% DOCUMENT LAYOUT
+\usepackage{geometry} 
+\geometry{a4paper, textwidth=5.5in, textheight=8.5in, marginparsep=7pt, marginparwidth=.6in}
+\setlength\parindent{0in}
+
+% FONTS
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\defaultfontfeatures{Mapping=tex-text}
+%\setromanfont [Ligatures={Common}, Numbers={OldStyle}, Variant=01]{Linux Libertine O}
+%\setmonofont[Scale=0.8]{Monaco}
+%%% modified by Karol Kozioł for ShareLaTeX use
+\setmainfont[
+  Ligatures={Common}, Numbers={OldStyle}, Variant=01,
+  BoldFont=LinLibertine_RB.otf,
+  ItalicFont=LinLibertine_RI.otf,
+  BoldItalicFont=LinLibertine_RBI.otf
+]{LinLibertine_R.otf}
+\setmonofont[Scale=0.8]{DejaVuSansMono.ttf}
+
+% ---- CUSTOM COMMANDS
+\chardef\&="E050
+\newcommand{\html}[1]{\href{#1}{\scriptsize\textsc{[html]}}}
+\newcommand{\pdf}[1]{\href{#1}{\scriptsize\textsc{[pdf]}}}
+\newcommand{\doi}[1]{\href{#1}{\scriptsize\textsc{[doi]}}}
+% ---- MARGIN YEARS
+\usepackage{marginnote}
+\newcommand{\amper{}}{\chardef\amper="E0BD }
+\newcommand{\years}[1]{\marginnote{\scriptsize #1}}
+\renewcommand*{\raggedleftmarginnote}{}
+\setlength{\marginparsep}{7pt}
+\reversemarginpar
+
+% HEADINGS
+\usepackage{sectsty} 
+\usepackage[normalem]{ulem} 
+\sectionfont{\mdseries\upshape\Large}
+\subsectionfont{\mdseries\scshape\normalsize} 
+\subsubsectionfont{\mdseries\upshape\large} 
+
+% PDF SETUP
+% ---- FILL IN HERE THE DOC TITLE AND AUTHOR
+\usepackage[%dvipdfm, 
+bookmarks, colorlinks, breaklinks, 
+% ---- FILL IN HERE THE TITLE AND AUTHOR
+	pdftitle={Andrea Fioraldi CV},
+	pdfauthor={Andrea Fioraldi},
+	pdfproducer={http://nitens.org/taraborelli/cvtex}
+]{hyperref}  
+\hypersetup{linkcolor=blue,citecolor=blue,filecolor=black,urlcolor=MidnightBlue} 
+
+\renewcommand{\baselinestretch}{1.15} 
+
+% DOCUMENT
+\begin{document}
+{\LARGE Andrea Fioraldi}\\[1cm]
+{\em Quickly translated and incomplete copy of the curriculum vitae in Italian, please refer to the English curriculum for a complete version.} \\[0.4cm]
+ Via [REDACTED], [REDACTED]\\
+Pontinia, LT. \texttt{04014}
+Italia.\\[.2cm]
+Telefono: \texttt{+39 [REDACTED]}\\[.2cm]
+email: \href{mailto:andreafioraldi@gmail.com}{andreafioraldi@gmail.com}\\
+blog: \href{https://andreafioraldi.github.io}{andreafioraldi.github.io}\\
+\textsc{github}: \href{https://github.com/andreafioraldi}{andreafioraldi}\\ 
+\textsc{twitter}: \href{https://twitter.com/andreafioraldi}{@andreafioraldi}\\
+
+\par\vspace{1cm}
+
+Nato:  [REDACTED], 1996---[REDACTED], Italy\\
+Nazionalità:  Italiana
+
+%%\hrule
+\section*{Posizione corrente}
+\emph{Studente magistrale in Engineering in Computer Science}, Sapienza Università di Roma.
+
+%%\hrule
+\section*{Area di specializzazione}
+ System Security • Binary analysis and exploitation
+
+%\hrule
+\section*{Riconoscimenti e premi}
+\noindent
+\years{2017}Primo posto in Binary Analysis (ex aequo) a CyberChallenge.IT 17.
+
+\years{2017}Secondo posto in Penetration Testing a CyberChallenge.IT 17.
+
+\years{2017}Terzo posto con il Team Nazionale di Cybersecurity alla European CyberSecurity Challenge (ECSC).
+
+\years{2018}Settimo post al DEF CON 26 CTF (finale mondiale) con il team \href{https://mhackeroni.it}{mHACKeroni}.
+
+\years{2018}Primo posto al Chaos Communication Congress CTF con il team \href{https://mhackeroni.it}{mHACKeroni}+KJC.
+
+\years{2019}Quinti posto al DEF CON 27 CTF (finale mondiale) con il team \href{https://mhackeroni.it}{mHACKeroni}.
+
+\section*{Laurea triennale}
+
+Ho ottenuto una laurea triennale in Ingegneria Informatica e Automatica all'università Sapienza di Roma con voto 110/110 e lode.
+
+La mia tesi è "Symbolic Execution and Debugging Synchronization", disponibile su \href{https://www.researchgate.net/publication/327655380_Symbolic_Execution_and_Debugging_Synchronization}{ResearchGate}
+
+\section*{Progetti rilevanti}
+\subsection*{Organizzazioni ed eventi}
+\years{2017}Co-fondatore del team accademico di Capture The Flag \href{https://theromanxpl0it.github.io}{TheRomanXpl0it} (TRX).
+
+\years{2018}Co-fondatore del mega-team italiano di Capture The Flag \href{https://mhackeroni.it}{mHACKeroni}.
+
+\years{2018}Fondatore del \href{https://defcon11396.it}{DEF CON 11396 Rome}, un gruppo che si riunisce ogni mese per talk su argomenti avanzati di computer security al di fuori del comune piano di studi.
+
+\subsection*{Software}
+\years{2017-2018}\href{https://carbonara-project.github.io/}{\emph{Carbonara}}, a malware research platform designed to recognize duplicated functions between binaries at scale and speed-up the static malware analysis process
+
+\years{2018}\href{https://github.com/andreafioraldi/angrdbg}{\emph{angrdbg}}, an abstract library used to implement synchronization between a concrete execution environment (tipically a debugger) and the \href{http://angr.io/}{angr} symbolic execution engine
+
+\years{2018}\href{https://andreafioraldi.github.io/IDAngr/}{\emph{IDAngr}}, an IDA Pro debugger plugin that implements the angrdbg API in IDA with an user-friendly GUI
+
+\years{2018}\href{https://github.com/andreafioraldi/angrgbg}{\emph{angrgdb}}, create an angr state from the current GDB state on top of angrdbg
+
+\years{2019}\href{https://github.com/vanhauser-thc/AFLplusplus}{\emph{AFL++}}, AFL 2.56b with community patches, AFLfast power schedules, QEMU 3.1 upgrade + laf-intel support, MOpt mutators, InsTrim instrumentation, Unicorn mode and a lot more! 
+
+\section*{Interessi di ricerca}
+
+Il mio principale interesse in security è scrivere strumenti per automatizzare la Binary Analysis
+usando tecniche avanzate come l'Esecuzione Simbolica, l'Istrumentazione Dinamica dei binari,
+il Taint Tracking e altro.
+
+Ad'ora ricerco nuove metodologie per lo Smart Fuzzing.
+
+Sono bravo nella ricerca di vulnerabilità, nella binary exploitation e nella malware analysis
+poichè sono i topic di applicazione della mia attività di ricerca.
+
+Sono anche un entusiasta della teoria dei linguaggi di programmazione.
+Ho sviluppato diversi linguaggi di programmazione educazionali sia per la mia
+stessa educazione che per l'educazione del giovani compagni di team in TRX
+riguardo le vulnerabilità e l'exploitation dei Linguaggi di Programmazione.
+
+\section*{Competenze tecniche}
+
+\subsection*{Linguaggi di programmazione}
+
+Sono molto proficuo con il C, C++, Python, ASM x86 ed ho familiarità con Javascript, Java, Scala, C\#.
+
+\subsection*{Sistemi operativi}
+
+Sono bravo nello scrivere codice per sistemi POSIX e non male con MS Windows (sviluppo userspace).
+Conosco gli internals del sistema GNU/Linux e ho familiaritò con la codebase del kernel.
+
+\subsection*{Strumenti di secruity}
+
+Conosco molto bene come usare IDA Pro, GDB, Frida, ed Intel PIN ad, inoltre, so usare e conosco il funzionamento interno di American Fuzzy Lop, QEMU TCG ed angr.
+Ho esperienza limitata con radare2.
+
+\section*{Volontariato}
+\noindent
+\years{2018}Ho insegnato Binary Exploitation a CyberChallenge.IT 2018 e 2019 a Roma.
+
+\section*{Hobbies and Passions}
+Tromba • Birra fatta in casa • Trekking • Mountain bike
+
+%\vspace{1cm}
+\vfill{}
+%\hrulefill
+
+\begin{center}
+{\scriptsize  Last updated: \today\- •\- 
+% ---- PLEASE LEAVE THIS BACKLINK FOR ATTRIBUTION AS PER CC-LICENSE
+Typeset in \href{http://nitens.org/taraborelli/cvtex}{
+%\fontspec{Times New Roman}
+\XeTeX }\\
+% ---- FILL IN THE FULL URL TO YOUR CV HERE
+\href{https://raw.githubusercontent.com/andreafioraldi/CurriculumVitae/master/cv.pdf}{https://raw.githubusercontent.com/andreafioraldi/CurriculumVitae/master/cv.pdf}}
+\end{center}
+
+{\scriptsize Italian legal note: Autorizzo il trattamento dei miei dati personali presenti nel cv ai sensi del Decreto Legislativo 30 giugno 2003, n. 196 “Codice in materia di protezione dei dati personali” e del GDPR (Regolamento UE 2016/679)}
+
+\end{document}

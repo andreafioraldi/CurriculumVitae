@@ -1,0 +1,209 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[10pt, a4paper]{article}
+\usepackage{fontspec} 
+
+% DOCUMENT LAYOUT
+\usepackage{geometry} 
+\geometry{a4paper, textwidth=5.5in, textheight=8.5in, marginparsep=7pt, marginparwidth=.6in}
+\setlength\parindent{0in}
+
+% FONTS
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\defaultfontfeatures{Mapping=tex-text}
+%\setromanfont [Ligatures={Common}, Numbers={OldStyle}, Variant=01]{Linux Libertine O}
+%\setmonofont[Scale=0.8]{Monaco}
+%%% modified by Karol Kozioł for ShareLaTeX use
+\setmainfont[
+  Ligatures={Common}, Numbers={OldStyle}, Variant=01,
+  BoldFont=LinLibertine_RB.otf,
+  ItalicFont=LinLibertine_RI.otf,
+  BoldItalicFont=LinLibertine_RBI.otf
+]{LinLibertine_R.otf}
+\setmonofont[Scale=0.8]{DejaVuSansMono.ttf}
+
+% ---- CUSTOM COMMANDS
+\chardef\&="E050
+\newcommand{\html}[1]{\href{#1}{\scriptsize\textsc{[html]}}}
+\newcommand{\pdf}[1]{\href{#1}{\scriptsize\textsc{[pdf]}}}
+\newcommand{\doi}[1]{\href{#1}{\scriptsize\textsc{[doi]}}}
+% ---- MARGIN YEARS
+\usepackage{marginnote}
+\newcommand{\amper{}}{\chardef\amper="E0BD }
+\newcommand{\years}[1]{\marginnote{\scriptsize #1}}
+\renewcommand*{\raggedleftmarginnote}{}
+\setlength{\marginparsep}{7pt}
+\reversemarginpar
+
+% HEADINGS
+\usepackage{sectsty} 
+\usepackage[normalem]{ulem} 
+\sectionfont{\mdseries\upshape\Large}
+\subsectionfont{\mdseries\scshape\normalsize} 
+\subsubsectionfont{\mdseries\upshape\large} 
+
+% PDF SETUP
+% ---- FILL IN HERE THE DOC TITLE AND AUTHOR
+\usepackage[%dvipdfm, 
+bookmarks, colorlinks, breaklinks, 
+% ---- FILL IN HERE THE TITLE AND AUTHOR
+	pdftitle={Andrea Fioraldi CV},
+	pdfauthor={Andrea Fioraldi},
+	pdfproducer={http://nitens.org/taraborelli/cvtex}
+]{hyperref}  
+\hypersetup{linkcolor=blue,citecolor=blue,filecolor=black,urlcolor=MidnightBlue} 
+
+\renewcommand{\baselinestretch}{1.15} 
+
+% DOCUMENT
+\begin{document}
+{\LARGE Andrea Fioraldi's Curriculum Vitae}\\[1cm]
+ [REDACTED] street, [REDACTED]\\
+Pontinia, LT. \texttt{04014}
+Italy.\\[.2cm]
+Phone: \texttt{+39 [REDACTED]}\\[.2cm]
+email: \href{mailto:andreafioraldi@gmail.com}{andreafioraldi@gmail.com}\\
+blog: \href{https://andreafioraldi.github.io}{andreafioraldi.github.io}\\
+\textsc{github}: \href{https://github.com/andreafioraldi}{andreafioraldi}\\ 
+\textsc{twitter}: \href{https://twitter.com/andreafioraldi}{@andreafioraldi}\\
+
+Born:  [REDACTED], 1996---[REDACTED], Italy\\
+Nationality:  Italian
+
+%%\hrule
+\section*{Current position}
+\emph{MSc Student in Engineering in Computer Science}, Sapienza University of Rome.
+
+%%\hrule
+\section*{Areas of specialization}
+ System Security • Software Testing
+
+%\hrule
+\section*{Honors and Awards}
+\noindent
+\years{2017}First place in Binary Analysis (ex aequo) at CyberChallenge.IT 17.
+
+\years{2017}Second place in Penetration Testing at CyberChallenge.IT 17.
+
+\years{2017}Third place with the Italian National Cybersecurity Team at European CyberSecurity Challenge (ECSC).
+
+\years{2018}Seventh place at DEF CON 26 CTF (World Finals) with the \href{https://mhackeroni.it}{mHACKeroni} team.
+
+\years{2018}First place at Chaos Communication Congress CTF with the \href{https://mhackeroni.it}{mHACKeroni}+KJC team.
+
+\years{2019}Fifth place at DEF CON 27 CTF (World Finals) with the \href{https://mhackeroni.it}{mHACKeroni} team.
+
+\section*{BSc Degree}
+
+I got a BSc Degree in Computer Engineering at Sapienza University of Rome with a degree of 110/110 cum laude.
+
+My thesis is "Symbolic Execution and Debugging Synchronization", available on \href{https://www.researchgate.net/publication/327655380_Symbolic_Execution_and_Debugging_Synchronization}{ResearchGate}
+
+\section*{Relevant Projects}
+\subsection*{Organizations and Events}
+\years{2017}Co-founder of \href{https://theromanxpl0it.github.io}{TheRomanXpl0it} (TRX) academic Capture The Flag team.
+
+\years{2018}Co-founder of the \href{https://mhackeroni.it}{mHACKeroni} joint Capture The Flag team.
+
+\years{2018}Founder of the \href{https://defcon11396.it}{DEF CON 11396 Rome}, a group that meets every month to do talks on advanced security topics at Sapienza.
+
+\subsection*{Software (excerpt)}
+\years{2017}\href{https://carbonara-project.github.io/}{\emph{Carbonara}}, a malware research platform designed to recognize duplicated functions between binaries at scale and speed-up the static malware analysis process.
+
+\years{2018}\href{https://github.com/andreafioraldi/angrdbg}{\emph{angrdbg}}, an abstract library used to implement synchronization between a concrete execution environment (tipically a debugger) and the \href{http://angr.io/}{angr} symbolic execution engine.
+
+\years{2018}\href{https://andreafioraldi.github.io/IDAngr/}{\emph{IDAngr}}, an IDA Pro debugger plugin that implements the angrdbg API in IDA with an user-friendly GUI.
+
+\years{2018}\href{https://github.com/andreafioraldi/angrgbg}{\emph{angrgdb}}, create an angr state from the current GDB state on top of angrdbg.
+
+\years{2019}\href{https://aflplus.plus}{\emph{AFL++}}, AFLplusplus is the daughter of the American Fuzzy Lop fuzzer and was created initially to incorporate all the best features developed in the years for the fuzzers in the AFL family and not merged in AFL.
+
+\years{2019}\href{https://github.com/andreafioraldi/frida-fuzzer}{\emph{frida-fuzzer}}, an injectable fuzzer based on Frida that enables in-process fuzzing of Android/iOS APIs.
+
+\years{2020}\href{https://github.com/andreafioraldi/qasan}{\emph{QEMU-AddressSanitizer}}, QASan is a custom QEMU 3.1.1 that detects memory errors in the guest using AddressSanitizer.
+
+\section*{Research Interests}
+
+My main interest is Software Testing for security, both with source code and binary-only.
+I'm comfortable with techniques such as Feedback-driven Fuzzing, Symbolic Execution, Dynamic Binary Instrumentation,
+Taint Tracking and more.
+
+Currently I am researching new methodologies to overcome roadblocks in Fuzzing.
+
+I am interested also in vulnerability auditing, binary exploitation and malware analysis as possible side topics of my research.
+
+I am an enthusiat about Programming Languages.
+I built several educational programming languages both for my education
+and for the education of the young teammates of the TRX team about interpreters vulnerabilities and exploitation.
+
+\section*{Publications}
+
+\subsection*{Academic}
+
+\noindent
+\years{2020} Fioraldi Andrea and D'Elia Daniele Cono and Coppa Emilio, \textit{WEIZZ: Automatic Grey-box Fuzzing for Structured Binary Formats} in Proceedings of the 29th ACM SIGSOFT International Symposium on Software Testing and Analysis.
+
+\noindent
+\years{2020} Andrea Fioraldi, Dominik Maier, Heiko Eißfeldt, and Marc Heuse. \textit{AFL++: Combining incremental steps of fuzzing research} in 14th USENIX Workshop on Offensive Technologies (WOOT 20). USENIX Association, Aug. 2020.
+
+\noindent
+\years{2020} Andrea Fioraldi, Daniele Cono D’Elia, and Leonardo Querzoni. \textit{Fuzzing binaries for memory safety errors with QASan} in 2020 IEEE Secure Development Conference (SecDev), 2020.
+
+\subsection*{Other}
+
+\noindent
+\years{2019} Fioraldi Andrea, \textit{Compare coverage for AFL++ QEMU}, \href{https://andreafioraldi.github.io/articles/2019/07/20/aflpp-qemu-compcov.html}{https://andreafioraldi.github.io/articles/2019/07/20/aflpp-qemu-compcov.html}
+
+\noindent
+\years{2019} Fioraldi Andrea, \textit{Sanitized Emulation with QASan}, \href{https://andreafioraldi.github.io/articles/2019/12/20/sanitized-emulation-with-qasan.html}{https://andreafioraldi.github.io/articles/2019/12/20/sanitized-emulation-with-qasan.html}
+
+\section*{Technical Skills}
+
+\subsection*{Programming Languages}
+
+I am very proficient with C, C++, Python, ASM x86 and I am familiar with Javascript, Java, Scala, C\#.
+
+\subsection*{Operating Systems}
+
+I am skilled in writing code for POSIX systems and I am not bad with MS Windows (userspace development).
+I know the internals of the Linux operating system and I am familiar with the kernel codebase.
+
+\subsection*{Security Tools}
+
+I know very well how to use IDA Pro, GDB, Frida and Intel PIN and I also know how to use and the internals of American Fuzzy Lop, QEMU TCG and angr.
+I have a limited past experience with radare2.
+
+\section*{Past Works}
+
+\noindent
+\years{2020} Student researcher in the S3 Lab of EURECOM under the supervision of Prof. D. Balzarotti.
+
+\section*{Voluntary}
+\noindent
+\years{2018}Binary exploitation teacher at CyberChallenge.IT 2018 and 2019 in Rome
+
+\years{2020}Google Summer of Code admin and mentor for the AFL++ organization
+
+\section*{Hobbies and Passions}
+Play the trumpet • Homebrewing • Trekking • Mountain bike
+
+%\vspace{1cm}
+\vfill{}
+%\hrulefill
+
+\begin{center}
+{\scriptsize  Last updated: \today\- •\- 
+% ---- PLEASE LEAVE THIS BACKLINK FOR ATTRIBUTION AS PER CC-LICENSE
+Typeset in \href{http://nitens.org/taraborelli/cvtex}{
+%\fontspec{Times New Roman}
+\XeTeX }\\
+% ---- FILL IN THE FULL URL TO YOUR CV HERE
+\href{https://raw.githubusercontent.com/andreafioraldi/CurriculumVitae/master/cv.pdf}{https://raw.githubusercontent.com/andreafioraldi/CurriculumVitae/master/cv.pdf}}
+\end{center}
+
+{\scriptsize Italian legal note: Autorizzo il trattamento dei miei dati personali presenti nel cv ai sensi del Decreto Legislativo 30 giugno 2003, n. 196 “Codice in materia di protezione dei dati personali” e del GDPR (Regolamento UE 2016/679)}
+
+\end{document}
